@@ -1,0 +1,25 @@
+MAX retorna o maior //duh
+EXEMPLO
+SELECT id_categoria, MAX(preco_de_venda) FROM produtos GROUP BY id_categoria;
+
+
+SELECT id_categoria, MAX(preco_venda) FROM produtos GROUP BY id_categoria
+HAVING MAX (preco_venda) > 3;
+
+
+SUM
+
+SELECT SUM(preco_venda) FROM produtos WHERE id_categoria = 1;
+
+AVG
+
+SELECT AVG(preco_venda) FROM produtos;
+
+
+ROUND
+retorna o valor arredondado
+SELECT ROUND(AVG(preco_venda),2) FROM produtos;
+
+
+COUNT 
+SELECT COUNT(preco_venda) AS Quantidade FROM produtos WHERE id_categoria = 1;

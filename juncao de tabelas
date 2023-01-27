@@ -1,0 +1,81 @@
+            junção de produto cartesiano 
+SELECT c.id, c.nome, c.data_nascimento, c.telefone, p.cargo
+    FROM clientes AS c, profissoes AS p
+    WHERE c.id_profissoes = p.id;
+
+                OU
+            
+            
+            inner join
+            
+
+
+SELECT c.id, c.nome, c.data_nascimento, c.telefone, p.cargo
+FROM clientes AS c INNER JOIN profissoes AS p
+ON C.id_profissoes = p.id;
+ 
+
+
+ RESULTADO PARECEIDO 
+
+ junção externa 
+ OUTER JOIN
+podendo ser a esquerda ou direita  ou full 
+se usar a esqueda puxa todos os dados da esquerda e compara com a direita 
+se n tiver dado traz null 
+
+
+ SELECT * FROM clientes //esquerda 
+ LEFT OUTER JOIN profissoes //direita 
+ ON clientes.id_profissoes = profissoes.id;
+
+
+obs n existe a full no mysql 
+se usa a esquerda e a direita unindo com UNION 
+
+
+
+
+        CROSS JOIN
+
+SELECT c.id, c.nome, c.data_nascimento, c.telefone, p.cargo
+FROM clientes AS C 
+CROSS JOIN profissoes AS p;
+passa todos os cargos para todos os clientes
+
+
+
+SELF JOIN
+usa um inner join nela mesmo 
+
+SELECT a.nome AS consumidor1, b.nome AS consumidor2, a.cidade
+FROM consumidor AS a 
+INNER JOIN consumidor AS b
+ON a.id <> b.id
+AND a.cidade=b.cidade;
+
+
+equi-join
+
+SELECT *
+FROM clientes JOIN profissoes
+on clientes.id_profissoes = profissoes.id;
+
+
+Resumo...
+
+juncao cartesiano é uma juncao entre duas tabelas que origina uma terceira
+tabela constituida por todos os elementos da primeira tabela combinada com todos os
+elementos da segunda.
+
+Juncao Interna (Inner Join) todas as linhas de uma tabela se relacionam com todas as linhas
+de outras tabelas se elas tiverem ao menos 1 campo em comum.
+
+Juncao Externa Esquerda (Left Outer Join) traz todos os registros da tabela esqueda
+mesmo quando nao exista registros correspondentes na tabela direita
+
+juncdo Externa Direita (Right Outer Join) traz todos os registros da tabela direita mesmo
+quando nao exista registros correspondentes na tabela esquerda.
+
+Juncao Externa Completa (Full Outer Join) apresenta todos os dados das tabelas a
+esquerda e a direita, mesmo que nao possuam correspondencia em outra tabela.

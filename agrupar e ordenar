@@ -1,0 +1,13 @@
+GROUP BY
+SELECT T.nome AS tipo, SUM(p.Quantidade) AS 'Quantidade em Estoque' FROM tipos AS t,produtos AS p WHERE t.id = p.id_tipo GROUP BY t.nome;
+
+SELECT t.nome AS tipo, f.nome AS fabricante, SUM(p.quantidade) AS'quantidade em estoque'
+    from tipos AS T, fabricantes AS f, produtos AS p
+    WHERE t.id = p.id_tipo AND f.id = p.id_fabricante
+    GROUP BY t.nome, f.nome;
+
+ ORDER BY normalmente é asc podendo ser DESC 
+
+  EXEMPLO
+
+  SELECT id, nome, id_tipo, id_fabricante, quantidade FROM produtos ORDER BY quantidade DESC;
