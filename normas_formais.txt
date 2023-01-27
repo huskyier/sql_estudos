@@ -1,0 +1,28 @@
+existem 3 formas normais// formas de normalizaçao
+
+# primeira regra
+se todos os campos forem atomicos (simples) e n mutlivalores
+TABELAS N ACEITAM VALOREZ VAZIOS
+criar outra tabela para mutlivalores
+
+
+# segunda regra
+
+tem q estar na primeira regra
+e todos os atributos n chave forem totalmente dependente da chave 
+exemplo 
+uma tabela com numero do pedido pode ter codigo do produto porem se colocar na tabela o nome do produto 
+esta errado 
+o nome do produto esta vinculado ao numero do produto ao qual vai fazer referencia na tabela original pelo codigo de produto
+
+
+# terceira regra 
+
+se ela estar na segunda forma normal 
+se nenhuma nao chave pode ser obitida por outro campo n chave
+exemplo n é preciso subtotal se tiver valor unitario e quantidade
+
+# quarta forma 
+
+ evitar repetiçao de conteudo em uma tabela
+ 

@@ -1,0 +1,139 @@
+image.pngmodelos de banco de dados
+
+modelo conceitual */ modelologico / fisico
+
+
+
+
+                    modelo conceitual 
+maior alto nivel 
+    mais perto de user 
+maior nivel de abstraçao 
+    somente aquilo q é importante 
+        modelar dados a partir de uma analise de sistema
+        requisitos de sistema
+
+pode ser elaborado de forma textual ou por meio de dois diagramas 
+
+exemplo 
+    cliente 
+        dados necessarios :nome tipo endereço bairro cidade estado telefone email e nome de contato 
+
+    pedido 
+        dados necessarios codigo de produto quantidade codigo de cliente cofigo de vendedor
+
+    geramos um DER/MER diagrama de entidade e relacionamento / modelo de entidade e relacionamento
+
+
+modelo logico 
+como armazenar os dados 
+que tipo de bd usar 
+relacional x n relacional 
+
+
+uso de colunas e linhas //tabelas 
+            exemplo
+                tipo de produto 
+                    codigo e descriçao
+                 produto
+                    codigo descriçao preço codigodo tipo
+                
+                ou
+                TipoDeProduto (CodTipoProd, DescrTipoProd)
+
+
+modelo fisico ou modelo de implementaçao
+    se escolhe o modelo de implementaçao
+    
+
+    preparaçao uso de tabelas com linhas e colunas 
+            linha 0 
+                nome de campo // tipo de dado // tamanho de campo
+                codigo de paciente // numerio // 5 digitos 
+                nome de paciente // alfanumerio // 50 caracteres 
+            ou usar a linguagem sql
+             
+
+
+outros conceitos 
+
+
+entidade = tabela
+objeto ou evento de mundo real sobre o qual desejamos manter registros em um banco de dados 
+
+
+atributos = campos da tabela = colunas
+exemplo preço descriçao codigo da tabela produto
+
+
+pk = chave primaria 
+campo de valor unico sem repetiçao 
+bolinha preta 
+
+
+relacionamento
+geralmente tabelas estao se relacionando 
+losangolo 
+
+
+chave estrangeira = fk 
+um atributo ou chave q representa uma chave primaria de outra entidade
+
+    exemplo
+        produto: codigo, codigo de tipo de produto, descriçao, e preço
+        tipo de produto: codigo, descriçao
+
+
+grau de relacionamento
+    unario , binario, ternario
+
+
+unario 
+    se relacuina com ela mesma 
+    exemplo 
+        em uma tabela de funcionarios : funcionario x gerencia funcionario y
+
+binario
+    se relaciona com outra tabela
+        vendedor ----vende---- produto 
+    
+
+ternario
+
+            cliente------pedido------vendedor
+                            /
+                            /
+                            /
+                            /
+                     tipo de pagamento 
+
+
+cardinalidade maxima 
+por exemplo um vendedor pode vender apenas um tipo de produto ou mais ?
+
+    binario 
+            1:1
+        indica q uma ocorrencia da entidade A pode se ralcionar exclusivamente com uma ocorrencia da entidade B 
+            exemplo 1 vender trabalha em 1 ecritorio 
+    losangolo branco
+
+    
+
+binario para muitos 
+    1:n 
+    1 vendedor atende n clientes
+    cada cliente é atentido por 1 vendedor
+losangolo preto e branco (preto de lado de 1 branco de lado n)
+
+
+
+
+muitos para muitos 
+    N:M
+ 1 vendedor atende diversos clientes 
+ 1 cliente é antendido por varios clientes 
+ SEMPRE Q FOR N:M CRIAR OUTRA ENTIDADE 
+
+
+cardinalidade minima 
+0:1 1:0 0:n 1:n 1:* 0:*
